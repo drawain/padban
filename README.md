@@ -1,4 +1,4 @@
-kanbar
+FlowBar
 ======
 
 Simple Kanban board tool
