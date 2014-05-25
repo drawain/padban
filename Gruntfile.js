@@ -387,7 +387,7 @@ module.exports = function (grunt) {
         browserify: {
             vendor: {
                 src: [],
-                dest: 'app/scripts_compiled/vendor.js',
+                dest: 'app/dist/vendor.js',
                 options: {
                     require: ['./app/bower_components/angular/angular'],
                     alias: ['./app/bower_components/angular/angular:angular']
@@ -397,7 +397,7 @@ module.exports = function (grunt) {
             //standalone browserify watch - do NOT use with grunt-watch
             client: {
                 src: ['app/scripts/**/*.js'],
-                dest: 'app/scripts_compiled/app.js',
+                dest: 'app/dist/app.js',
                 options: {
                     bundleOptions: {
                         debug: true
@@ -407,18 +407,7 @@ module.exports = function (grunt) {
                     watch: true,
                     keepAlive: true
                 }
-            },
-
-            //working with grunt-watch - do NOT use with keepAlive above
-//            watchClient: {
-//                src: ['app/scripts/**/*.js'],
-//                dest: 'app/scripts_compiled/app.js',
-//                options: {
-//                    external: ['app/bower_components/angular/angular', 'angular'],
-//                    transform: ['es6ify', 'browserify-shim', 'partialify', 'debowerify'],
-//                    watch: true
-//                }
-//            }
+            }
         }
 
     });
