@@ -2,10 +2,16 @@
   "name": "flowbar",
   "version": "0.1.0",
   "dependencies": {
+    "atomify": "^2.2.2",
+    "browserify": "^4.1.5",
+    "browserify-shim": "^3.5.0",
     "co": "^3.0.6",
     "co-body": "^0.0.1",
     "co-monk": "^1.0.0",
     "co-views": "^0.2.0",
+    "es6ify": "^1.1.0",
+    "handlebars": "^1.3.0",
+    "hbsfy": "^1.3.2",
     "koa": "^0.6.0",
     "koa-compress": "^1.0.6",
     "koa-json": "^1.0.1",
@@ -14,12 +20,15 @@
     "koa-static": "^1.4.5",
     "lodash": "^2.4.1",
     "monk": "^0.9.0",
+    "partialify": "^3.1.1",
     "swig": "^1.3.2"
   },
   "devDependencies": {
+    "debowerify": "^0.7.1",
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.4.0",
     "grunt-bower-install": "~1.0.0",
+    "grunt-browserify": "^2.1.0",
     "grunt-concurrent": "~0.5.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
@@ -31,7 +40,6 @@
     "grunt-contrib-jshint": "~0.7.1",
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-contrib-watch": "~0.5.2",
-    "grunt-google-cdn": "~0.2.0",
     "grunt-karma": "^0.8.3",
     "grunt-newer": "~0.6.1",
     "grunt-ngmin": "~0.0.2",
@@ -39,6 +47,7 @@
     "grunt-rev": "~0.1.0",
     "grunt-svgmin": "~0.2.0",
     "grunt-usemin": "~2.0.0",
+    "gulp": "^3.6.2",
     "jshint-stylish": "~0.1.3",
     "karma": "^0.12.16",
     "karma-ng-html2js-preprocessor": "^0.1.0",
@@ -54,7 +63,30 @@
   "engines": {
     "node": ">=0.11.0"
   },
+  "browserify": {
+    "transform": [
+      "es6ify",
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "angular": "./angular.js"
+  },
+  "browserify-shim": {
+    "angular": "global:angular"
+  },
+  "atomify": {
+    "js": {
+      "entry": "app/scripts/app.js",
+      "output": "app/dist/bundle.js"
+    },
+    "css": {
+      "entry": "app/styles/main.css",
+      "output": "app/dist/bundle.css"
+    }
+  },
   "scripts": {
+    "build": "atomify",
     "start": "node --harmony app.js",
     "testKOA": "mocha --harmony",
     "test": "grunt test"
