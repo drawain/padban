@@ -1,15 +1,20 @@
 {
   "name": "flowbar",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "dependencies": {
-    "koa": "^0.6.0",
-    "koa-logger": "^1.2.0",
-    "koa-static": "^1.4.5",
-    "koa-route": "^1.1.4",
-    "koa-compress": "^1.0.6",
+    "co": "^3.0.6",
+    "co-body": "^0.0.1",
+    "co-monk": "^1.0.0",
     "co-views": "^0.2.0",
-    "swig": "^1.3.2",
-    "co-body": "^0.0.1"
+    "koa": "^0.6.0",
+    "koa-compress": "^1.0.6",
+    "koa-json": "^1.0.1",
+    "koa-logger": "^1.2.0",
+    "koa-route": "^1.1.4",
+    "koa-static": "^1.4.5",
+    "lodash": "^2.4.1",
+    "monk": "^0.9.0",
+    "swig": "^1.3.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -30,6 +35,7 @@
     "grunt-karma": "^0.8.3",
     "grunt-newer": "~0.6.1",
     "grunt-ngmin": "~0.0.2",
+    "grunt-nodemon": "^0.2.1",
     "grunt-rev": "~0.1.0",
     "grunt-svgmin": "~0.2.0",
     "grunt-usemin": "~2.0.0",
@@ -38,9 +44,12 @@
     "karma-ng-html2js-preprocessor": "^0.1.0",
     "karma-ng-scenario": "^0.1.0",
     "load-grunt-tasks": "~0.4.0",
-    "time-grunt": "~0.2.1",
+    "minimatch": "^0.3.0",
+    "mocha": "^1.18.2",
+    "open": "0.0.5",
+    "ps-tree": "0.0.3",
     "supertest": "^0.12.1",
-    "mocha": "^1.18.2"
+    "time-grunt": "~0.2.1"
   },
   "engines": {
     "node": ">=0.11.0"
