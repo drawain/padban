@@ -2,16 +2,15 @@
 
 var angular = require('angular');
 
-var log = msg => {
-    console.log(msg);
-};
+var log = msg => console.log(msg);
 
 angular
     .module('flowbarApp', [
         'ngCookies',
         'ngResource',
         'ngSanitize',
-        'ngRoute'
+        'ngRoute',
+        'ui.tree'
     ])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -23,6 +22,10 @@ angular
             .when('/things', {
                 template: require('../views/things.html'),
                 controller: require('./controllers/thing')
+            })
+            .when('/trees', {
+                template: require('../views/trees.html'),
+                controller: require('./controllers/trees')
             })
             .otherwise({
                 redirectTo: '/'
