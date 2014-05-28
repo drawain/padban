@@ -14,11 +14,11 @@ var fs = require('fs');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-var config = require('./lib/config/config');
+var config = require('./config/config');
 monk.db = monk(config.mongo.uri, config.mongo.options);
 
 // Bootstrap models
-var modelsPath = path.join(__dirname, 'lib/models');
+var modelsPath = path.join(__dirname, '../lib/models');
 fs.readdirSync(modelsPath).forEach(function (file) {
   if (/(.*)\.(js$|coffee$)/.test(file)) {
     require(modelsPath + '/' + file);
@@ -26,7 +26,7 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 });
 
 // Populate empty DB with sample data
-require('./lib/config/dummydata');
+require('./config/dummydata');
 
 // Logger
 app.use(logger());
@@ -45,7 +45,8 @@ var formatResponse = function(mw) {
 app.use(formatResponse(json()));
 
 // Setup controllers
-var controllersPath = path.join(__dirname, 'lib/controllers');
+var controllersPath = path.join(__dirname, 'controllers');
+
 fs.readdirSync(controllersPath).forEach(function (file) {
   if (/(.*)\.(js$|coffee$)/.test(file)) {
     require(controllersPath + '/' + file)(app);
@@ -53,7 +54,7 @@ fs.readdirSync(controllersPath).forEach(function (file) {
 });
 
 // Serve static files
-app.use(serve(path.join(__dirname, 'app')));
+app.use(serve(path.join(__dirname, '../client')));
 
 // Compress
 app.use(compress());

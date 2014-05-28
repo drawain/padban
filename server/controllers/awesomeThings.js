@@ -12,5 +12,5 @@ var getThings = function*() {
 };
 
 module.exports = function(app) {
-    app.use(route.get('/api/awesomeThings', (getThings)));
+    app.use(route.get('/api/awesomeThings', getThings));
 };

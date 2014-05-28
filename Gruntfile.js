@@ -1,34 +1,18 @@
-// Generated on 2014-05-24 using generator-angular 0.8.0
 'use strict';
-
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
 
-    // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
-
-    // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
+    require(require('es6ify').runtime);
 
-    var traceur = require('es6ify').runtime;
-    require(traceur);
-
-    // Define the configuration for all the tasks
     grunt.initConfig({
 
-        // Project settings
         yeoman: {
-            // configurable paths
-            app: require('./bower.json').appPath || 'app',
+            app: require('./bower.json').appPath || 'client',
             dist: 'dist'
         },
 
-        // Watches files for changes and runs tasks based on the changed files
         watch: {
             bower: {
                 files: ['bower.json'],
@@ -41,62 +25,15 @@ module.exports = function (grunt) {
                     livereload: true
                 }
             },
-            jsTest: {
-                files: ['test/spec/{,*/}*.js'],
-                tasks: ['newer:jshint:test', 'karma']
-            },
             styles: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
                 tasks: ['newer:copy:styles', 'autoprefixer']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
-            },
-            livereload: {
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                },
-                files: [
-                    '<%= yeoman.app %>/{,*/}*.html',
-                    '.tmp/styles/{,*/}*.css',
-                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-                ]
             }
         },
 
-        // The actual grunt server settings
-        connect: {
-            options: {
-                port: 9000,
-                // Change this to '0.0.0.0' to access the server from outside.
-                hostname: 'localhost',
-                livereload: 35729
-            },
-            livereload: {
-                options: {
-                    open: true,
-                    base: [
-                        '.tmp',
-                        '<%= yeoman.app %>'
-                    ]
-                }
-            },
-            test: {
-                options: {
-                    port: 9001,
-                    base: [
-                        '.tmp',
-                        'test',
-                        '<%= yeoman.app %>'
-                    ]
-                }
-            },
-            dist: {
-                options: {
-                    base: '<%= yeoman.dist %>'
-                }
-            }
-        },
 
         // Make sure code styles are up to par and there are no obvious mistakes
         jshint: {
@@ -252,29 +189,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // ngmin tries to make the code safe for minification automatically by
-        // using the Angular long form for dependency injection. It doesn't work on
-        // things like resolve or inject so those have to be done manually.
-        ngmin: {
-            dist: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '.tmp/concat/scripts',
-                        src: '*.js',
-                        dest: '.tmp/concat/scripts'
-                    }
-                ]
-            }
-        },
-
-        // Replace Google CDN references
-//        cdnify: {
-//            dist: {
-//                html: ['<%= yeoman.dist %>/*.html']
-//            }
-//        },
-
         // Copies remaining files to places other tasks can use
         copy: {
             dist: {
@@ -324,32 +238,6 @@ module.exports = function (grunt) {
             ]
         },
 
-        // By default, your `index.html`'s <!-- Usemin block --> will take care of
-        // minification. These next options are pre-configured if you do not wish
-        // to use the Usemin blocks.
-        // cssmin: {
-        //   dist: {
-        //     files: {
-        //       '<%= yeoman.dist %>/styles/main.css': [
-        //         '.tmp/styles/{,*/}*.css',
-        //         '<%= yeoman.app %>/styles/{,*/}*.css'
-        //       ]
-        //     }
-        //   }
-        // },
-        // uglify: {
-        //   dist: {
-        //     files: {
-        //       '<%= yeoman.dist %>/scripts/scripts.js': [
-        //         '<%= yeoman.dist %>/scripts/scripts.js'
-        //       ]
-        //     }
-        //   }
-        // },
-        // concat: {
-        //   dist: {}
-        // },
-
         // Test settings
         karma: {
             unit: {
@@ -360,10 +248,10 @@ module.exports = function (grunt) {
 
         // Use nodemon to run server in debug mode with an initial breakpoint
         nodemon: {
-            debug: {
-                script: 'app.js',
+            server: {
+                script: 'server/app.js',
                 options: {
-//          nodeArgs: ['--debug-brk'],
+                    watch: ['server/**/*', 'lib/**/*'],
                     nodeArgs: ['--harmony'],
                     env: {
                         PORT: process.env.PORT || 3000
@@ -372,13 +260,6 @@ module.exports = function (grunt) {
                         nodemon.on('log', function (event) {
                             console.log(event.colour);
                         });
-
-                        // opens browser on initial server start
-//            nodemon.on('config:update', function () {
-//              setTimeout(function () {
-//                require('open')('http://localhost:8080/debug?port=5858');
-//              }, 500);
-//            });
                     }
                 }
             }
@@ -387,22 +268,21 @@ module.exports = function (grunt) {
         browserify: {
             vendor: {
                 src: [],
-                dest: 'app/dist/vendor.js',
+                dest: '<%= yeoman.app %>/dist/vendor.js',
                 options: {
-                    require: ['./app/bower_components/angular/angular'],
-                    alias: ['./app/bower_components/angular/angular:angular']
+                    require: ['./<%= yeoman.app %>/bower_components/angular/angular'],
+                    alias: ['./<%= yeoman.app %>/bower_components/angular/angular:angular']
                 }
             },
 
-            //standalone browserify watch - do NOT use with grunt-watch
             client: {
-                src: ['app/scripts/**/*.js'],
-                dest: 'app/dist/app.js',
+                src: ['<%= yeoman.app %>/scripts/**/*.js'],
+                dest: '<%= yeoman.app %>/dist/app.js',
                 options: {
                     bundleOptions: {
                         debug: true
                     },
-                    external: ['app/bower_components/angular/angular', 'angular'],
+                    external: ['<%= yeoman.app %>/bower_components/angular/angular', 'angular'],
                     transform: ['es6ify', 'browserify-shim', 'partialify', 'debowerify'],
                     watch: true,
                     keepAlive: true
@@ -428,10 +308,7 @@ module.exports = function (grunt) {
         ]);
     });
 
-    grunt.registerTask('server', function (target) {
-        grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-        grunt.task.run(['serve:' + target]);
-    });
+    grunt.registerTask('server', ['nodemon']);
 
     grunt.registerTask('test', [
         'clean:server',

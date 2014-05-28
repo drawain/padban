@@ -2,16 +2,15 @@
 
 describe('Controller: MainCtrl', function () {
 
-    // load the controller's module
-    beforeEach(module('flowbarApp'));
-
-    var MainCtrl,
+    var Ctrl = require('../../../../client/scripts/controllers/main'),
+        MainCtrl,
         scope;
 
     // Initialize the controller and a mock scope
     beforeEach(inject(function ($controller, $rootScope) {
         scope = $rootScope.$new();
-        MainCtrl = $controller('MainCtrl', {
+
+        MainCtrl = $controller(Ctrl, {
             $scope: scope
         });
     }));
