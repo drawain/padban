@@ -2,7 +2,6 @@
   "name": "flowbar",
   "version": "0.1.0",
   "dependencies": {
-    "atomify": "^2.2.2",
     "browserify": "^4.1.5",
     "browserify-shim": "^3.5.0",
     "co": "^3.0.6",
@@ -47,10 +46,10 @@
     "grunt-rev": "~0.1.0",
     "grunt-svgmin": "~0.2.0",
     "grunt-usemin": "~2.0.0",
-    "gulp": "^3.6.2",
     "jshint-stylish": "~0.1.3",
     "karma": "^0.12.16",
     "karma-bro": "^0.3.0",
+    "karma-growl": "^0.1.0",
     "karma-jasmine": "^0.2.2",
     "karma-ng-html2js-preprocessor": "^0.1.0",
     "karma-ng-scenario": "^0.1.0",
@@ -60,7 +59,7 @@
     "mocha": "^1.18.2",
     "open": "0.0.5",
     "ps-tree": "0.0.3",
-    "supertest": "^0.12.1",
+    "supertest": "^0.13.0",
     "time-grunt": "~0.2.1",
     "watchify": "^0.10.1"
   },
@@ -79,18 +78,7 @@
   "browserify-shim": {
     "angular": "global:angular"
   },
-  "atomify": {
-    "js": {
-      "entry": "app/scripts/app.js",
-      "output": "app/dist/bundle.js"
-    },
-    "css": {
-      "entry": "app/styles/main.css",
-      "output": "app/dist/bundle.css"
-    }
-  },
   "scripts": {
-    "build": "atomify",
     "start": "node --harmony server/app.js",
     "testKOA": "mocha --harmony",
     "test": "grunt test"

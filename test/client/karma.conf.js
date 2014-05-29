@@ -1,14 +1,13 @@
 // Karma configuration
-// http://karma-runner.github.io/0.10/config/configuration-file.html
 
 module.exports = function(config) {
   config.set({
-    basePath: '',
+    basePath: '../../',
     port: 8080,
     logLevel: config.LOG_INFO,
 
     frameworks: ['jasmine', 'browserify'],
-    reporters: [ 'dots' ],
+    reporters: [ 'dots', 'growl' ],
     browsers: ['PhantomJS'],
 
     colors: true,
@@ -22,15 +21,14 @@ module.exports = function(config) {
       'client/bower_components/angular-cookies/angular-cookies.js',
       'client/bower_components/angular-sanitize/angular-sanitize.js',
       'client/bower_components/angular-route/angular-route.js',
-      'test/**/*.js'
+      'test/client/spec/**/*.js'
     ],
 
     exclude: [],
 
     preprocessors: {
-        "test/**/*.js": "browserify"
+        'test/client/spec/**/*.js': 'browserify'
     },
-
 
     browserify: {
         debug: true,

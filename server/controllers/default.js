@@ -6,6 +6,10 @@ module.exports = function(app) {
     app.use(route.get('/', function*() {
         this.redirect('/index.html');
     }));
+
+    app.use(route.get('/printTest', function*() {
+        this.body = 'Hello Test!';
+    }));
 };
 
 //'use strict';
