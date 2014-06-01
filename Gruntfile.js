@@ -251,7 +251,7 @@ module.exports = function (grunt) {
             server: {
                 script: 'server/app.js',
                 options: {
-                    watch: ['server/**/*', 'lib/**/*'],
+                    watch: ['server/**/*', 'lib/**/*', 'test/mocks/**/*'],
                     nodeArgs: ['--harmony'],
                     env: {
                         PORT: process.env.PORT || 3000

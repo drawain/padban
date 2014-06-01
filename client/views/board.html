@@ -1,0 +1,35 @@
+<script type="text/ng-template" id="board.html">
+     <h3 ui-tree-handle>{{ column.title }}</h3>
+
+     <ol ui-tree-nodes="" data-type="card" ng-model="column.cards">
+        <li data-type="card" ng-repeat="card in column.cards" ui-tree-node ng-include="'column.html'"></li>
+     </ol>
+</script>
+
+<script type="text/ng-template" id="column.html">
+    <div ui-tree-handle class="tree-node">
+        <div class="tree-node-content">
+
+            {{ card.title }}
+
+        </div>
+    </div>
+</script>
+
+
+<h1>{{ board.title }}</h1>
+
+<div class="row" ui-tree="treeOptions">
+    <div ui-tree-nodes="" ng-model="board.columns" data-type="column">
+
+        <div class="col-sm-{{ board.columns.length | bootstrapColumn }}"
+             ng-repeat="column in board.columns"
+             ui-tree-node
+             ng-include="'board.html'"
+             data-horizontal=""
+             data-type="column"
+             style="border: 1px solid #eee;">
+        </div>
+    </div>
+
+</div>

@@ -2,9 +2,7 @@
 
 var angular = require('angular');
 
-var log = msg => console.log(msg);
-
-angular
+module.exports = angular
     .module('flowbarApp', [
         'ngCookies',
         'ngResource',
@@ -27,9 +25,13 @@ angular
                 template: require('../views/trees.html'),
                 controller: require('./controllers/trees')
             })
+            .when('/board', {
+                template: require('../views/board.html'),
+                controller: require('./controllers/board')
+            })
             .otherwise({
                 redirectTo: '/'
             });
+    }])
 
-        log('Started');
-    }]);
+    .filter('bootstrapColumn', require('./filters/bootstrapColumn'));

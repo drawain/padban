@@ -21,6 +21,7 @@ module.exports = function(config) {
       'client/bower_components/angular-cookies/angular-cookies.js',
       'client/bower_components/angular-sanitize/angular-sanitize.js',
       'client/bower_components/angular-route/angular-route.js',
+      'client/bower_components/angular-ui-tree/dist/angular-ui-tree.js',
       'test/client/spec/**/*.js'
     ],
 
