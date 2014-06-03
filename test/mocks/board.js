@@ -19,7 +19,12 @@ module.exports = {
         {
             id: 2,
             title: 'In Progress',
-            cards: []
+            cards: [
+                {
+                    id: 1,
+                    title: 'almaaa2'
+                }
+            ]
         },
         {
             id: 3,

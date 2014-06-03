@@ -19,7 +19,6 @@ describe('Controller: BoardCtrl', function () {
         $http = $httpBackend;
     }));
 
-
     it('should attach a list of awesomeThings to the scope', function () {
         $http.flush();
         expect(scope.board).toEqual(mockedBoard);

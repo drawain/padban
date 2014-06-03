@@ -14,8 +14,8 @@ module.exports = angular
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
-                template: require('../views/main.html'),
-                controller: require('./controllers/main')
+                template: require('../views/board.html'),
+                controller: require('./controllers/board')
             })
             .when('/things', {
                 template: require('../views/things.html'),
@@ -24,10 +24,6 @@ module.exports = angular
             .when('/trees', {
                 template: require('../views/trees.html'),
                 controller: require('./controllers/trees')
-            })
-            .when('/board', {
-                template: require('../views/board.html'),
-                controller: require('./controllers/board')
             })
             .otherwise({
                 redirectTo: '/'
