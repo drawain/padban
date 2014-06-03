@@ -70,10 +70,18 @@ module.exports = function (grunt) {
             }
         },
 
+        mkdir: {
+            mongo: {
+                options: {
+                    create: ['data/db']
+                },
+            },
+        },
+
         concurrent: {
             dev: {
                 tasks: [
-                    'run:mongo',
+                    'mongo',
                     'server',
                     'client',
                     'test',
@@ -134,7 +142,7 @@ module.exports = function (grunt) {
                 cmd: 'mongod',
                 args: [
                     '--dbpath',
-                    './data/db'
+                    'data/db'
                 ]
 
             }
@@ -148,6 +156,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('server', ['nodemon']);
+    grunt.registerTask('mongo', ['mkdir:mongo', 'run:mongo']);
     grunt.registerTask('test', ['karma']);
     grunt.registerTask('client', ['browserify:client']);
 };

@@ -43,4 +43,4 @@ co(function *() {
     });
 
     console.log('Finished populating things');
-});
+})();
