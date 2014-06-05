@@ -8,6 +8,7 @@ module.exports = angular
         'ngResource',
         'ngSanitize',
         'ngRoute',
+        'ui.bootstrap',
         'ui.tree'
     ])
 

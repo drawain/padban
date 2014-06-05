@@ -17,7 +17,50 @@
 </script>
 
 
-<h1>{{ board.title }}</h1>
+<nav class="navbar navbar-default navbar-page row" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand navbar-board-title" href="#"><span class="glyphicon glyphicon-th-large"></span>{{ board.title }}</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-credit-card"></span>Board</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list-alt"></span>Cards on board <b class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Active cards</a></li>
+                        <li><a href="#">Finished cards</a></li>
+                        <li><a href="#">Cards to do</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-comment"></span>Chat</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-dashboard"></span>Statistics</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-cog"></span>Manage board</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
 
 <div class="row" ui-tree="treeOptions">
     <div ui-tree-nodes="" ng-model="board.columns" data-type="column">

@@ -1,3 +1,71 @@
-body {
-  margin: 5px;
+body,
+html {
+  margin: 0;
+  font-family: 'Cabin', sans-serif;
+}
+.navbar {
+  border: none;
+}
+.navbar-top {
+  background: #fff;
+  color: #2c3032;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.navbar-top .nav {
+  margin-top: 3px;
+}
+.navbar-top .nav button {
+  color: #2c3032;
+  padding-left: 0;
+  padding-right: 16px;
+}
+.navbar-top .nav #navbar_profile_btn {
+  padding-top: 11px;
+  padding-bottom: 9px;
+}
+.navbar-top .nav li.profile {
+  line-height: 46px;
+  margin-right: 16px;
+}
+.navbar-top .nav li.profile a {
+  display: inline-block;
+}
+.navbar-top .nav li.profile span {
+  color: #98867f;
+}
+.navbar-top .nav img.profile {
+  margin-top: -4px;
+  margin-left: 5px;
+}
+.navbar-top .navbar-toggle:hover .icon-bar,
+.navbar-top .navbar-toggle:focus .icon-bar {
+  background-color: #fff;
+}
+.navbar-top .navbar-brand {
+  color: #2c3032;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.7em;
+}
+.navbar-header .navbar-board-title {
+  color: #98867f;
+  text-transform: uppercase;
+}
+.navbar-page .navbar-board-title {
+  margin-top: -2px;
+}
+.navbar-page .glyphicon {
+  top: 2px;
+  margin-right: 5px;
+}
+.tooltip {
+  pointer-events: none;
+}
+img.profile {
+  max-height: 35px;
+  max-width: 35px;
+  border: 1px solid #2c3032;
+}
+img.profile.img-thumbnail {
+  padding: 1px;
 }

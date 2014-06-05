@@ -1,3 +1,100 @@
-body {
-    margin: 5px;
+@import 'Bootstrap/variables.less';
+
+body, html {
+    margin: 0;
+    font-family: 'Cabin', sans-serif;
+}
+
+.navbar {
+    border: none;
+}
+
+
+.navbar-top {
+    background: #fff;
+    color: @navbar-default-bg;
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    .nav {
+        margin-top: 3px;
+
+        button {
+            color: @navbar-default-bg;
+            padding-left: 0;
+            padding-right: 16px;
+        }
+
+        #navbar_profile_btn {
+            padding-top: 11px;
+            padding-bottom: 9px;
+        }
+
+        li.profile {
+            line-height: 46px;
+            margin-right: 16px;
+
+            a {
+                display: inline-block;
+            }
+
+            span {
+                color: @navbar-default-link-color;
+            }
+        }
+
+        img.profile {
+            margin-top: -4px;
+            margin-left: 5px;
+        }
+
+        .button {
+
+        }
+    }
+
+    .navbar-toggle:hover, .navbar-toggle:focus {
+        .icon-bar {
+            background-color: #fff;
+        }
+    }
+
+    .navbar-brand {
+        color: @navbar-default-bg;
+        font-family: 'Pacifico', cursive;
+        font-size: 1.7em;
+    }
+}
+
+.navbar-header .navbar-board-title {
+    color: @navbar-default-link-color;
+    text-transform: uppercase;
+}
+
+.navbar-page {
+    .navbar-board-title {
+        margin-top: -2px;
+    }
+    .glyphicon {
+        top: 2px;
+        margin-right: 5px;
+    }
+}
+
+.icon-button {
+
+}
+
+.tooltip {
+    pointer-events: none;
+}
+
+img.profile {
+    max-height: 35px;
+    max-width: 35px;
+    border: 1px solid @navbar-default-bg;
+
+    &.img-thumbnail {
+        padding: 1px;
+    }
 }

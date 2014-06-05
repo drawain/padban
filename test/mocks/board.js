@@ -1,6 +1,6 @@
 module.exports = {
     id: 1,
-    title: 'Simple kanban board',
+    title: 'Quick Release Smoke test',
     columns: [
         {
             id: 1,

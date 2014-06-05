@@ -1,26 +1,53 @@
 <!doctype html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Quick Release Smoke test ~ PadBan</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/angular-ui-tree/dist/angular-ui-tree.min.css" />
-    <link rel="stylesheet" href="bower_components/angular-ui-tree/demo/css/tree.css" />
+    <link rel="stylesheet" href="styles/Bootstrap/bootstrap.css"/>
     <!-- endbower -->
     <!-- endbuild -->
+
+    <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/Flat-UI/css/flat-ui.css" />
+    <!--<link rel="stylesheet" href="styles/Flat-UI/css/flat-ui.css" />-->
     <!-- endbuild -->
-  </head>
-  <body ng-app="flowbarApp">
+</head>
+<body ng-app="flowbarApp">
 
-    <!-- Add your site or application content here -->
+    <nav class="navbar navbar-default navbar-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">PadBan</a>
+
+            </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="profile">
+                        You are logged in as <span>Andras Fincza</span><img src="/images/draven.jpeg" class="profile img-circle img-thumbnail">
+                    </li>
+                    <!--<li class="button">-->
+                        <!--<button id="navbar_profile_btn" type="button" class="btn btn-default btn-lg btn-link" tooltip-placement="left" tooltip="Profile settings">-->
+                            <!--<span class="glyphicon glyphicon-user"></span>-->
+                        <!--</button>-->
+                    <!--</li>-->
+                    <li class="button">
+                        <button id="navbar_logout_btn" type="button" class="btn btn-default btn-lg btn-link" tooltip-placement="left" tooltip="Logout">
+                            <span class="glyphicon glyphicon-log-out"></span>
+                        </button>
+                    </li>
+                </ul>
+        </div>
+    </nav>
+
     <div class="container-fluid" ng-view=""></div>
 
     <!--[if lt IE 9]>
@@ -32,12 +59,12 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

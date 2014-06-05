@@ -19,8 +19,12 @@ module.exports = function (grunt) {
                 tasks: ['bowerInstall']
             },
             styles: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+                files: ['<%= yeoman.app %>/styles/*.less'],
                 tasks: ['newer:less:styles']
+            },
+            lessBootstrap: {
+                files: ['<%= yeoman.app %>/styles/Bootstrap/*.less'],
+                tasks: ['less:bootstrap']
             }
         },
 
@@ -30,8 +34,19 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: '<%= yeoman.app %>/styles',
-                        src: ['{,*/}*.less'],
+                        src: ['*.less'],
                         dest: '<%= yeoman.app %>/styles',
+                        ext: '.css'
+                    }
+                ]
+            },
+            bootstrap: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= yeoman.app %>/styles/Bootstrap',
+                        src: ['bootstrap.less'],
+                        dest: '<%= yeoman.app %>/styles/Bootstrap',
                         ext: '.css'
                     }
                 ]
