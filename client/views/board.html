@@ -37,7 +37,7 @@
                     <a href="#"><span class="glyphicon glyphicon-credit-card"></span>Board</a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list-alt"></span>Cards on board <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list-alt"></span>Cards <b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#">Active cards</a></li>
                         <li><a href="#">Finished cards</a></li>
@@ -45,7 +45,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><span class="glyphicon glyphicon-comment"></span>Chat</a>
+                    <a href="#"><span class="glyphicon glyphicon-comment"></span>Messages</a>
                 </li>
                 <li>
                     <a href="#"><span class="glyphicon glyphicon-dashboard"></span>Statistics</a>
@@ -62,17 +62,56 @@
 </nav>
 
 
-<div class="row" ui-tree="treeOptions">
-    <div ui-tree-nodes="" ng-model="board.columns" data-type="column">
+<div id="board-sidebar">
+    <div class="col-md-12">
+        <div class="progression">
+            <h3>Board Progress</h3>
 
-        <div class="col-sm-{{ board.columns.length | bootstrapColumn }}"
-             ng-repeat="column in board.columns"
-             ui-tree-node
-             ng-include="'board.html'"
-             data-horizontal=""
-             data-type="column"
-             style="border: 1px solid #eee;">
+            <div ang:round:progress
+                 data-round-progress-model="progress"
+                 data-round-progress-width="400"
+                 data-round-progress-height="400"
+                 data-round-progress-label-font="bold 45pt Cabin"
+                 data-round-progress-inner-circle-radius="1000"
+                 data-round-progress-outer-circle-background-color="#5dfff7"
+                 data-round-progress-outer-circle-foreground-color="#12eeb9"
+                 data-round-progress-label-color="#98867f"
+                 data-round-progress-outer-circle-width="50"
+                 data-round-progress-outer-circle-radius="170"></div>
+
+        </div>
+        <div class="members">
+            <h3>Participants</h3>
+            <div><img src="/images/draven.jpeg" class="profile img-circle img-thumbnail img-large" tooltip-placement="right" tooltip="Andras Fincza"></div>
+            <div><img src="/images/draven.jpeg" class="profile img-circle img-thumbnail img-large" tooltip-placement="right" tooltip="Teszt Elek"></div>
+            <div><img src="/images/draven.jpeg" class="profile img-circle img-thumbnail img-large" tooltip-placement="right" tooltip="Pelda Geza"></div>
+            <div><img src="/images/draven.jpeg" class="profile img-circle img-thumbnail img-large" tooltip-placement="right" tooltip="Alma Csutka Ilonka"></div>
         </div>
     </div>
-
 </div>
+<div id="board-wrapper">
+    <div class="col-md-12">
+        <div class="row" ui-tree="treeOptions">
+            <div ui-tree-nodes="" ng-model="board.columns" data-type="column">
+
+                <div class="col-sm-{{ board.columns.length | bootstrapColumn }}"
+                     ng-repeat="column in board.columns"
+                     ui-tree-node
+                     ng-include="'board.html'"
+                     data-horizontal=""
+                     data-type="column"
+                     style="border: 1px solid #eee;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

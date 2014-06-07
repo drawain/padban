@@ -61,11 +61,62 @@ html {
 .tooltip {
   pointer-events: none;
 }
+.dropdown-menu {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
 img.profile {
-  max-height: 35px;
-  max-width: 35px;
+  height: 35px;
+  width: 35px;
   border: 1px solid #2c3032;
 }
 img.profile.img-thumbnail {
   padding: 1px;
+}
+img.profile.img-large {
+  height: 50px;
+  width: 50px;
+}
+#board-sidebar {
+  width: inherit;
+  min-width: 130px;
+  max-width: 130px;
+  float: left;
+  height: 100%;
+  position: relative;
+  margin-left: -15px;
+  color: #98867f;
+  text-align: center;
+}
+#board-sidebar h3 {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+#board-sidebar .progression {
+  height: 150px;
+  overflow: hidden;
+}
+#board-sidebar .progression h3 {
+  margin-top: 0;
+}
+#board-sidebar .progression canvas {
+  position: relative;
+  top: -150px;
+  left: -150px;
+  -moz-transform: scale(0.25);
+  -webkit-transform: scale(0.25);
+  -o-transform: scale(0.25);
+  -ms-transform: scale(0.25);
+  transform: scale(0.25);
+}
+#board-sidebar .members > div {
+  margin: 15px 0;
+}
+#board-wrapper {
+  height: 100%;
+  overflow: auto;
+  padding-left: 15px;
 }

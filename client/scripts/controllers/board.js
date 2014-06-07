@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = ['$scope', '$http', function BoardCtrl($scope, $http) {
+module.exports = ['$scope', '$http', '$interval', function BoardCtrl($scope, $http, $interval) {
     $scope.treeOptions = {
         accept: function (sourceNode, destinationNodes) {
             var sourceType = sourceNode.$element.data('type');
@@ -20,4 +20,15 @@ module.exports = ['$scope', '$http', function BoardCtrl($scope, $http) {
     $http.get('/api/board').success(function (board) {
         $scope.board = board;
     });
+
+    $scope.progress = {
+        label: '100%',
+        percentage: 0.15
+    };
+
+    $interval(function() {
+        $scope.progress.percentage += 0.1;
+
+    }, 1000);
+
 }];

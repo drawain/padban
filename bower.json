@@ -14,7 +14,8 @@
     "json3": "3.3.1",
     "bootstrap": "3.1.1",
     "jasmine": "~2.0.0",
-    "angular-bootstrap": "~0.11.0"
+    "angular-bootstrap": "~0.11.0",
+    "angular-round-progress-directive": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.x",
