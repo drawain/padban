@@ -80,10 +80,6 @@ body, html {
     }
 }
 
-.icon-button {
-
-}
-
 .tooltip {
     pointer-events: none;
 }
@@ -112,23 +108,27 @@ img.profile {
 }
 
 #board-sidebar {
+    @sidebar-width: 130px;
+
     width: inherit;
-    min-width: 130px;
-    max-width: 130px;
+    min-width: @sidebar-width;
+    max-width: @sidebar-width;
     float: left;
     height: 100%;
     position: relative;
     margin-left: -15px;
-    color: @navbar-default-link-color;
     text-align: center;
+    font-size: .9em;
+    color: #1c1f20;
 
     h3 {
         font-size: 1em;
         text-transform: uppercase;
+        color: @navbar-default-link-color;
     }
 
     .progression {
-        height: 150px;
+        height: 140px;
         overflow: hidden;
 
         h3 {
@@ -145,13 +145,31 @@ img.profile {
             -ms-transform: scale(0.25);
             transform: scale(0.25);
         }
+    }
 
+    .timer {
+        h3 {
+            margin-bottom: 5px;
+        }
     }
 
     .members {
-        > div {
-            margin: 15px 0;
+        .member {
+            margin: 0 auto 15px auto;
+            width: 95px;
+            height: 50px;
+            padding-left: 3px;
 
+            img {
+                float: left;
+                display: block;
+            }
+
+            .info {
+                float: left;
+                text-align: left;
+                margin: 8px 0 0 10px;
+            }
         }
     }
 

@@ -88,15 +88,17 @@ img.profile.img-large {
   height: 100%;
   position: relative;
   margin-left: -15px;
-  color: #98867f;
   text-align: center;
+  font-size: .9em;
+  color: #1c1f20;
 }
 #board-sidebar h3 {
   font-size: 1em;
   text-transform: uppercase;
+  color: #98867f;
 }
 #board-sidebar .progression {
-  height: 150px;
+  height: 140px;
   overflow: hidden;
 }
 #board-sidebar .progression h3 {
@@ -112,8 +114,23 @@ img.profile.img-large {
   -ms-transform: scale(0.25);
   transform: scale(0.25);
 }
-#board-sidebar .members > div {
-  margin: 15px 0;
+#board-sidebar .timer h3 {
+  margin-bottom: 5px;
+}
+#board-sidebar .members .member {
+  margin: 0 auto 15px auto;
+  width: 95px;
+  height: 50px;
+  padding-left: 3px;
+}
+#board-sidebar .members .member img {
+  float: left;
+  display: block;
+}
+#board-sidebar .members .member .info {
+  float: left;
+  text-align: left;
+  margin: 8px 0 0 10px;
 }
 #board-wrapper {
   height: 100%;

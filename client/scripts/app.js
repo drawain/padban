@@ -9,6 +9,7 @@ module.exports = angular
         'ngSanitize',
         'ngRoute',
         'angular.directives-round-progress',
+        'timer',
         'ui.bootstrap',
         'ui.tree'
     ])

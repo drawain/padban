@@ -80,21 +80,55 @@
                  data-round-progress-outer-circle-radius="170"></div>
 
         </div>
+
+        <div class="timer">
+            <h3>Time</h3>
+            <timer interval="1000">{{hhours}}:{{mminutes}}:{{sseconds}}</timer>
+        </div>
+
         <div class="members">
             <h3>Participants</h3>
-            <div><img src="/images/draven.jpeg" class="profile img-circle img-thumbnail img-large" tooltip-placement="right" tooltip="Andras Fincza"></div>
-            <div><img src="/images/draven.jpeg" class="profile img-circle img-thumbnail img-large" tooltip-placement="right" tooltip="Teszt Elek"></div>
-            <div><img src="/images/draven.jpeg" class="profile img-circle img-thumbnail img-large" tooltip-placement="right" tooltip="Pelda Geza"></div>
-            <div><img src="/images/draven.jpeg" class="profile img-circle img-thumbnail img-large" tooltip-placement="right" tooltip="Alma Csutka Ilonka"></div>
+            <div class="member">
+                <img src="/images/draven.jpeg" class="profile img-circle img-thumbnail img-large" tooltip-placement="right" tooltip="Andras Fincza">
+                <div class="info">
+                    <div tooltip-placement="right" tooltip="No. of cards in progress"><span class="glyphicon glyphicon-edit"></span> 1</div>
+                    <div tooltip-placement="right" tooltip="No. of finished cards"><span class="glyphicon glyphicon-check"></span> 12</div>
+
+                </div>
+            </div>
+            <div class="member">
+                <img src="/images/draven.jpeg" class="profile img-circle img-thumbnail img-large" tooltip-placement="right" tooltip="Andras Fincza">
+                <div class="info">
+                    <div tooltip-placement="right" tooltip="No. of cards in progress"><span class="glyphicon glyphicon-edit"></span> 0</div>
+                    <div tooltip-placement="right" tooltip="No. of finished cards"><span class="glyphicon glyphicon-check"></span> 1</div>
+
+                </div>
+            </div>
+            <div class="member">
+                <img src="/images/draven.jpeg" class="profile img-circle img-thumbnail img-large" tooltip-placement="right" tooltip="Andras Fincza">
+                <div class="info">
+                    <div tooltip-placement="right" tooltip="No. of cards in progress"><span class="glyphicon glyphicon-edit"></span> 78</div>
+                    <div tooltip-placement="right" tooltip="No. of finished cards"><span class="glyphicon glyphicon-check"></span> 0</div>
+
+                </div>
+            </div>
+            <div class="member">
+                <img src="/images/draven.jpeg" class="profile img-circle img-thumbnail img-large" tooltip-placement="right" tooltip="Andras Fincza">
+                <div class="info">
+                    <div tooltip-placement="right" tooltip="No. of cards in progress"><span class="glyphicon glyphicon-edit"></span> 99</div>
+                    <div tooltip-placement="right" tooltip="No. of finished cards"><span class="glyphicon glyphicon-check"></span> 57</div>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <div id="board-wrapper">
     <div class="col-md-12">
         <div class="row" ui-tree="treeOptions">
-            <div ui-tree-nodes="" ng-model="board.columns" data-type="column">
+            <div ui-tree-nodes="" ng-model="board.columns" data-type="column" class="column-container">
 
-                <div class="col-sm-{{ board.columns.length | bootstrapColumn }}"
+                <div class="col-sm-{{ board.columns.length | bootstrapColumn }} column"
                      ng-repeat="column in board.columns"
                      ui-tree-node
                      ng-include="'board.html'"
