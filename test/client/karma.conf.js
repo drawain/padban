@@ -22,6 +22,9 @@ module.exports = function(config) {
       'client/bower_components/angular-sanitize/angular-sanitize.js',
       'client/bower_components/angular-route/angular-route.js',
       'client/bower_components/angular-ui-tree/dist/angular-ui-tree.js',
+      'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'client/bower_components/angular-round-progress-directive/angular-round-progress-directive.js',
+      'client/bower_components/angular-timer/dist/angular-timer.js',
       'test/client/spec/**/*.js'
     ],
 
