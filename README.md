@@ -1,7 +1,7 @@
-FlowBar
+PadBan
 ======
 
-Simple Kanban board tool
+A simple Kanban board
 
 
 Setup

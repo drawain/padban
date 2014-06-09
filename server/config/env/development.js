@@ -1,7 +1,7 @@
 module.exports = {
   env: 'development',
-  ip: 'localhost',
+  ip: '0.0.0.0',
   mongo: {
-    uri: 'mongodb://localhost/flowbar-dev'
+    uri: 'mongodb://localhost/padban-dev'
   }
 };

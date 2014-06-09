@@ -3,6 +3,6 @@
 module.exports = {
   env: 'test',
   mongo: {
-    uri: 'mongodb://localhost/flowbar-test'
+    uri: 'mongodb://localhost/padban-test'
   }
 };

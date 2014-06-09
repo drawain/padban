@@ -3,7 +3,7 @@
 var angular = require('angular');
 
 module.exports = angular
-    .module('flowbarApp', [
+    .module('padbanApp', [
         'ngCookies',
         'ngResource',
         'ngSanitize',

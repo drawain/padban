@@ -7,7 +7,7 @@ describe('Filter: bootstrapColumn', function () {
     var angular = require('angular'),
         bootstrapColumn;
 
-    beforeEach(angular.mock.module('flowbarApp'));
+    beforeEach(angular.mock.module('padbanApp'));
 
     beforeEach(inject(function ($filter) {
         bootstrapColumn = $filter('bootstrapColumn');

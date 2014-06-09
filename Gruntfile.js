@@ -14,10 +14,6 @@ module.exports = function (grunt) {
         },
 
         watch: {
-            bower: {
-                files: ['bower.json'],
-                tasks: ['bowerInstall']
-            },
             styles: {
                 files: ['<%= yeoman.app %>/styles/*.less'],
                 tasks: ['newer:less:styles']
@@ -50,14 +46,6 @@ module.exports = function (grunt) {
                         ext: '.css'
                     }
                 ]
-            }
-        },
-
-        // Automatically inject Bower components into the app
-        bowerInstall: {
-            app: {
-                src: ['<%= yeoman.app %>/index.html'],
-                ignorePath: '<%= yeoman.app %>/'
             }
         },
 
