@@ -1,5 +1,7 @@
 @import 'Bootstrap/variables.less';
 
+@highlight: #999;
+
 body, html {
     margin: 0;
     font-family: 'Cabin', sans-serif;
@@ -19,6 +21,19 @@ body, html {
     font-weight: inherit;
     min-height: 0;
     line-height: inherit;
+}
+
+.angular-ui-tree-placeholder {
+    border: 3px dashed @highlight;
+    margin: 10px;
+
+    &.column {
+        margin: 0 5px 0 15px;
+    }
+}
+
+.tree-node-content {
+    margin: 10px;
 }
 
 .app-wrapper {
@@ -59,7 +74,7 @@ body, html {
             }
 
             span {
-                color: @navbar-default-link-color;
+                color: @highlight;
             }
         }
 
@@ -149,7 +164,7 @@ img.profile {
     h3 {
         font-size: 1em;
         text-transform: uppercase;
-        color: @navbar-default-link-color;
+        color: @highlight;
     }
 
     .progression {
@@ -216,8 +231,8 @@ img.profile {
             text-transform: uppercase;
             margin-top: 0;
             margin-bottom: 0;
-            padding: 15px;
-            background: #2980B9;
+            padding: 10px;
+            background: #549ad7;
             color: #fff;
             font-size: 18px;
         }
@@ -241,7 +256,7 @@ img.profile {
 
 .column, .group {
     h3 {
-        span {
+        .action {
             font-size: 12px;
             left: 4px;
             top: -1px;
@@ -252,13 +267,20 @@ img.profile {
         }
 
         &:hover {
-            span {
+            .action {
                 opacity: 1;
             }
         }
 
         .new-card {
             left: 8px;
+        }
+    }
+
+    .dropdown {
+        a, a:active, a:visited {
+            font-size: 12px;
+            text-transform: none;
         }
     }
 }
@@ -277,7 +299,7 @@ img.profile {
         .id {
             font-size: 12px;
             line-height: 12px;
-            color: @navbar-default-link-color;
+            color: @highlight;
         }
 
         .title {

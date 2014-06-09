@@ -13,8 +13,15 @@ module.exports = ['$scope', '$http', '$interval', function BoardCtrl($scope, $ht
             var $placeholder = event.elements.placeholder,
                 $draggingElement = event.source.nodeScope.$element;
 
-            $placeholder.addClass($draggingElement.attr('class'));
             $draggingElement.css({width: $placeholder.outerWidth() + 'px'});
+
+            $placeholder
+                .addClass($draggingElement.attr('class'))
+                .css({
+                    width: ($placeholder.outerWidth() - 20) + 'px',
+                    height: ($placeholder.outerHeight() - 10) + 'px'
+                });
+
         }
     };
 

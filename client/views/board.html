@@ -1,6 +1,18 @@
 <script type="text/ng-template" id="column.html">
     <div class="col-md-12">
-         <h3 class="row" ui-tree-handle>{{ column.title }} <span class="edit-column glyphicon glyphicon-pencil"></span> <span class="new-card glyphicon glyphicon-plus"></span></h3>
+         <h3 class="row">
+             <span ui-tree-handle>{{ column.title }}</span>
+             <span class="action edit-column glyphicon glyphicon-pencil"></span>
+
+             <span class="dropdown">
+                <span class="action new-card glyphicon glyphicon-plus dropdown-toggle" data-toggle="dropdown"></span>
+
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#"><span class="glyphicon glyphicon-unchecked"></span> New card</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> New group</a></li>
+                </ul>
+             </span>
+         </h3>
 
          <ol ui-tree-nodes="" data-type="card" ng-model="column.cards" class="row">
             <li data-type="card" ng-repeat="card in column.cards" ui-tree-node ng-include="'card.html'"></li>
@@ -9,13 +21,16 @@
          <ol ui-tree-nodes="" data-type="group" ng-model="column.groups" class="row">
             <li data-type="group" ng-repeat="group in column.groups" ui-tree-node ng-include="'group.html'"></li>
          </ol>
-
     </div>
 </script>
 
 <script type="text/ng-template" id="group.html">
     <div class="col-md-12 group">
-         <h3 class="row" ui-tree-handle>{{ group.title }} <b class="caret"></b> <span class="edit-column glyphicon glyphicon-pencil"></span> <span class="new-card glyphicon glyphicon-plus"></span></h3>
+         <h3 class="row">
+             <span ui-tree-handle>{{ group.title }} <b class="caret"></b></span>
+             <span class="action edit-column glyphicon glyphicon-pencil"></span>
+             <span class="action new-card glyphicon glyphicon-plus"></span>
+         </h3>
 
          <ol ui-tree-nodes="" data-type="card" ng-model="group.cards" class="row">
             <li data-type="card" ng-repeat="card in group.cards" ui-tree-node ng-include="'card.html'"></li>
@@ -37,11 +52,9 @@
                 </div>
             </div>
 
-
             <div class="profile" ui-tree-handle>
                 <img src="/images/{{ ::getImg() }}" class="profile img-circle img-thumbnail img-large" tooltip="Andras Fincza">
             </div>
-
         </div>
     </div>
 </script>
@@ -88,6 +101,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>Manage board <b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-th-list"></span> Add column</a></li>
+                        <li class="divider"></li>
                         <li><a href="#"><span class="glyphicon glyphicon-send"></span> Invite a participant</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit details</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-repeat"></span> Reset board</a></li>

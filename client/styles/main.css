@@ -16,6 +16,16 @@ html {
   min-height: 0;
   line-height: inherit;
 }
+.angular-ui-tree-placeholder {
+  border: 3px dashed #999999;
+  margin: 10px;
+}
+.angular-ui-tree-placeholder.column {
+  margin: 0 5px 0 15px;
+}
+.tree-node-content {
+  margin: 10px;
+}
 .app-wrapper {
   background-color: #fff;
   padding-bottom: 20px;
@@ -49,7 +59,7 @@ html {
   display: inline-block;
 }
 .navbar-top .nav li.profile span {
-  color: #98867f;
+  color: #999999;
 }
 .navbar-top .nav img.profile {
   margin-top: -4px;
@@ -115,7 +125,7 @@ img.profile.img-large {
 #board-sidebar h3 {
   font-size: 1em;
   text-transform: uppercase;
-  color: #98867f;
+  color: #999999;
 }
 #board-sidebar .progression {
   height: 140px;
@@ -167,8 +177,8 @@ img.profile.img-large {
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 15px;
-  background: #2980B9;
+  padding: 10px;
+  background: #549ad7;
   color: #fff;
   font-size: 18px;
 }
@@ -184,8 +194,8 @@ img.profile.img-large {
   font-size: 16px !important;
   text-transform: uppercase !important;
 }
-.column h3 span,
-.group h3 span {
+.column h3 .action,
+.group h3 .action {
   font-size: 12px;
   left: 4px;
   top: -1px;
@@ -194,13 +204,22 @@ img.profile.img-large {
   cursor: pointer !important;
   z-index: 5;
 }
-.column h3:hover span,
-.group h3:hover span {
+.column h3:hover .action,
+.group h3:hover .action {
   opacity: 1;
 }
 .column h3 .new-card,
 .group h3 .new-card {
   left: 8px;
+}
+.column .dropdown a,
+.group .dropdown a,
+.column .dropdown a:active,
+.group .dropdown a:active,
+.column .dropdown a:visited,
+.group .dropdown a:visited {
+  font-size: 12px;
+  text-transform: none;
 }
 .card {
   border-left: 5px solid #12eeb9;
@@ -216,7 +235,7 @@ img.profile.img-large {
 .card .header .id {
   font-size: 12px;
   line-height: 12px;
-  color: #98867f;
+  color: #999999;
 }
 .card .header .title {
   margin-top: 3px;
