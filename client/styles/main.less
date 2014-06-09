@@ -211,17 +211,36 @@ img.profile {
     > div {
         min-height: 650px;
         background-color: #ECF0F1;
+
+        > h3 {
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 15px;
+            background: #2980B9;
+            color: #fff;
+            font-size: 18px;
+        }
     }
+}
 
+.group {
     h3 {
-        text-transform: uppercase;
-        margin-top: 0;
-        margin-bottom: 0;
+        background-color: transparent !important;
+        color: @navbar-default-link-color !important;
+        margin-top: 10px !important;
+        padding-top: 15px !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 5px !important;
         padding: 15px;
-        background: #2980B9;
-        color: #fff;
-        font-size: 18px;
+        border-top: 5px dashed #fff !important;
+        font-size: 16px !important;
+        text-transform: uppercase !important;
+    }
+}
 
+.column, .group {
+    h3 {
         span {
             font-size: 12px;
             left: 4px;
@@ -241,20 +260,6 @@ img.profile {
         .new-card {
             left: 8px;
         }
-    }
-}
-
-.group {
-    h3 {
-        background-color: transparent !important;
-        color: @navbar-default-link-color !important;
-        margin-top: 10px !important;
-        padding-top: 15px !important;
-        margin-bottom: 0 !important;
-        padding-bottom: 5px !important;
-        border-top: 5px dashed #fff !important;
-        font-size: 16px !important;
-        text-transform: uppercase !important;
     }
 }
 
@@ -300,5 +305,18 @@ img.profile {
     .content {
         padding-top: 20px;
         padding-bottom: 20px;
+    }
+
+    .powered {
+        span {
+            font-size: 18px;
+            line-height: 18px;
+            vertical-align: middle;
+            transition: color .2s ease-in-out;
+
+            &:hover {
+                color: #fff;
+            }
+        }
     }
 }

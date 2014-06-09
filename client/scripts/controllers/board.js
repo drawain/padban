@@ -23,14 +23,14 @@ module.exports = ['$scope', '$http', '$interval', function BoardCtrl($scope, $ht
     });
 
     $scope.progress = {
-        label: '100%',
+        label: '35%',
         percentage: 0.15
     };
 
     $interval(function() {
         $scope.progress.percentage += 0.1;
 
-    }, 1000);
+    }, 3000);
 
     $scope.getImg = function() {
         var img = ['draven.jpeg', 'bilbo.jpg', 'gates.jpg', 'morgan.jpg'];
