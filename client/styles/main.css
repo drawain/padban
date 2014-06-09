@@ -2,6 +2,23 @@ body,
 html {
   margin: 0;
   font-family: 'Cabin', sans-serif;
+  height: 100%;
+  background-color: #2c3032;
+}
+.angular-ui-tree-nodes .angular-ui-tree-nodes {
+  padding: 0;
+}
+.angular-ui-tree-nodes {
+  min-height: 25px;
+}
+.angular-ui-tree-handle {
+  font-weight: inherit;
+  min-height: 0;
+  line-height: inherit;
+}
+.app-wrapper {
+  background-color: #fff;
+  padding-bottom: 20px;
 }
 .navbar {
   border: none;
@@ -69,16 +86,16 @@ html {
   box-shadow: none;
 }
 img.profile {
-  height: 35px;
-  width: 35px;
+  max-height: 35px;
+  max-width: 35px;
   border: 1px solid #2c3032;
 }
 img.profile.img-thumbnail {
   padding: 1px;
 }
 img.profile.img-large {
-  height: 50px;
-  width: 50px;
+  max-height: 50px;
+  max-width: 50px;
 }
 #board-sidebar {
   width: inherit;
@@ -90,7 +107,10 @@ img.profile.img-large {
   margin-left: -15px;
   text-align: center;
   font-size: .9em;
-  color: #1c1f20;
+  color: #2c3032;
+}
+#board-sidebar > div {
+  padding-right: 0;
 }
 #board-sidebar h3 {
   font-size: 1em;
@@ -107,7 +127,7 @@ img.profile.img-large {
 #board-sidebar .progression canvas {
   position: relative;
   top: -150px;
-  left: -150px;
+  left: -143px;
   -moz-transform: scale(0.25);
   -webkit-transform: scale(0.25);
   -o-transform: scale(0.25);
@@ -135,5 +155,81 @@ img.profile.img-large {
 #board-wrapper {
   height: 100%;
   overflow: auto;
-  padding-left: 15px;
+}
+.column {
+  padding-right: 5px;
+}
+.column > div {
+  min-height: 650px;
+  background-color: #ECF0F1;
+}
+.column h3 {
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 15px;
+  background: #2980B9;
+  color: #fff;
+  font-size: 18px;
+}
+.column h3 span {
+  font-size: 12px;
+  left: 4px;
+  top: -1px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+  cursor: pointer !important;
+  z-index: 5;
+}
+.column h3:hover span {
+  opacity: 1;
+}
+.column h3 .new-card {
+  left: 8px;
+}
+.group h3 {
+  background-color: transparent !important;
+  color: #98867f !important;
+  margin-top: 10px !important;
+  padding-top: 15px !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 5px !important;
+  border-top: 5px dashed #fff !important;
+  font-size: 16px !important;
+  text-transform: uppercase !important;
+}
+.card {
+  border-left: 5px solid #12eeb9;
+  background: #fff;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  min-height: 70px;
+}
+.card .header {
+  padding-right: 60px;
+}
+.card .header .id {
+  font-size: 12px;
+  line-height: 12px;
+  color: #98867f;
+}
+.card .header .title {
+  margin-top: 3px;
+}
+.card .header .link {
+  font-size: 11px;
+  color: #98867f;
+}
+.card .profile {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+#footer {
+  color: #98867f;
+}
+#footer .content {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

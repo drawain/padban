@@ -14,7 +14,8 @@ module.exports = ['$scope', '$http', '$interval', function BoardCtrl($scope, $ht
                 $draggingElement = event.source.nodeScope.$element;
 
             $placeholder.addClass($draggingElement.attr('class'));
-        } 
+            $draggingElement.css({width: $placeholder.outerWidth() + 'px'});
+        }
     };
 
     $http.get('/api/board').success(function (board) {
@@ -30,5 +31,10 @@ module.exports = ['$scope', '$http', '$interval', function BoardCtrl($scope, $ht
         $scope.progress.percentage += 0.1;
 
     }, 1000);
+
+    $scope.getImg = function() {
+        var img = ['draven.jpeg', 'bilbo.jpg', 'gates.jpg', 'morgan.jpg'];
+        return img[Math.floor(Math.random() * img.length)];
+    };
 
 }];
